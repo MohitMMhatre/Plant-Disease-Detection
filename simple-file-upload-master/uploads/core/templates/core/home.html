@@ -1,0 +1,118 @@
+<html>
+<head>
+<title>Plant Disease Detection</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+.navbar
+{
+	width:100%;
+	height:15%;
+	color:#fff;
+	background:#76a912;
+}
+h3
+{
+ text-align:center;
+}
+ul li
+{
+list-style:none;
+}
+button
+{
+	color:#fff;
+	width:120px;
+	height:50px;
+	background:#76a912;
+	margin-top:2%;
+	margin-left:20%;
+}
+button:hover
+{
+cursor:pointer;
+}
+a
+{
+color:#fff;
+}
+a:hover
+{
+color:#fff;
+}
+#jbody
+{
+ height:77%;
+ }
+</style>
+<!--style>
+#cbody
+{
+	border:1px solid #ddd;
+	background:#fff;
+	box-shadow: 5px 5px #4d4d4d;
+	margin-top:10%;
+	width:100%;
+	height:40%;
+	padding :1.5%;
+}
+#cbody:hover
+{
+	cursor:pointer;
+}
+body
+{
+	background:#76a912;
+}
+
+button
+{
+	margin-left:20%;
+	margin-top:1.5%;
+	color:#fff;
+	width:120px;
+	height:50px;
+	background:#76a912
+}
+button:hover
+{
+cursor:pointer;
+}
+
+
+</style-->
+</head>
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="navbar ">
+	<h3>Plant Disease Detection Software</h3>
+</div>
+<div class="container" id="cbody">
+	<div class="jumbotron" id="jbody">
+	<ul>
+		<li>
+     <button type="button"><a id="uploadImage" type="file" name="myPhoto" onchange="PreviewImage();"  href="{% url 'simple_upload' %}">Simple Upload</a></button>
+		</li>
+		
+	</ul>
+  <!--p>Uploaded files:</p>
+  <ul>
+    {% for obj in documents %}
+      <li>
+        <a  href="{{ obj.document.url }}">{{ obj.document.name }}</a>
+		
+        <small  >(Uploaded at: {{ obj.uploaded_at }})</small>
+      </li>
+    {% endfor %}
+  </ul-->
+
+</div>
+</div>
+
+
+{% endblock %}
+</html>

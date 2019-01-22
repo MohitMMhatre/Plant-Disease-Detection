@@ -1,0 +1,84 @@
+<html>
+<head>
+<title>Plant Disease Detection</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+.navbar
+{
+	width:100%;
+	height:15%;
+	color:#fff;
+	background:#76a912;
+}
+h3
+{
+ text-align:center;
+}
+ul li
+{
+list-style:none;
+}
+button
+{
+	color:#fff;
+	width:120px;
+	height:50px;
+	background:#76a912;
+	margin-top:2%;
+	margin-left:20%;
+}
+button:hover
+{
+cursor:pointer;
+}
+a
+{
+color:#ddd;
+}
+a:hover
+{
+color:#3d3d3d;
+}
+#in
+{
+	width:200px;
+	height:50px;
+	margin-left:20%;
+}
+#jbody
+{
+	height:75%;
+	overflow-x:hidden;
+}
+</style>
+</head>
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+  <div class="navbar ">
+	<h3>Plant Disease Detection Software</h3>
+</div>
+	<div class="container">
+		<div class="jumbotron" id="jbody">
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" id="in" name="myfile">
+		<button type="submit">Upload</button>
+	</form>
+	
+
+	{% if uploaded_file_url %}
+	<h3> {{ a }}</h3>
+	<image src="{{ uploaded_file_url }}" height="70%" width="95%" style="margin-left:2%">
+    <!--p>File uploaded at: <a href="{{ uploaded_file_url }}">{{ uploaded_file_url }}</a></p-->
+  {% endif %}
+
+	</div>
+  </div>
+{% endblock %}

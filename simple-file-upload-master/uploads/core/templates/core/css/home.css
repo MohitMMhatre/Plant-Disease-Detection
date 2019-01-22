@@ -1,0 +1,12 @@
+#cbody
+{
+	border:1px solid #333;
+}
+#cbody:hover
+{
+	cursor:pointer;
+}
+body
+{
+	background:orange;
+}
